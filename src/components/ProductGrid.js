@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { ChevronDown, ChevronLeft, Check, SlidersHorizontal } from 'lucide-react'; // 'SlidersHorizontal' add karein
+import { ChevronDown,  Check, SlidersHorizontal } from 'lucide-react'; // 'SlidersHorizontal' add karein
 import './ProductGrid.css';
 import ProductCard from './ProductCard';
 
