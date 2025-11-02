@@ -1,0 +1,170 @@
+.product-grid-wrapper {
+  width: 100%;
+}
+
+/* Header (3425 ITEMS, HIDE FILTER, etc.) */
+.product-grid-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 88px;
+  padding: 0 1rem;
+  border-top: 1px solid #e5e7eb;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.product-count {
+  font-family: 'Simplon_Norm-Bold', Helvetica;
+  font-weight: 700;
+  color: #252020;
+  font-size: 1.125rem; /* 18px */
+}
+
+/* 'HIDE FILTER' aur 'RECOMMENDED' buttons */
+.filter-toggle-btn,
+.sort-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem; /* 8px */
+  font-size: 1rem; /* 16px */
+  color: #252020;
+}
+
+.filter-toggle-btn span {
+  font-family: 'Adobe_Caslon_Pro-Regular', Helvetica; /* Yeh font alag tha */
+  font-weight: 400;
+  color: #888792; /* textsecondary-text */
+  text-decoration: underline;
+}
+
+.sort-btn span {
+  font-family: 'Simplon_Norm-Bold', Helvetica;
+  font-weight: 700;
+  font-size: 1.125rem; /* 18px */
+}
+
+/* Product Grid Layout */
+.products-layout {
+  display: grid;
+  /* Desktop mein 3 column */
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem; /* 24px */
+  padding-top: 2rem; /* mt-8 */
+}
+
+/* --- Responsive --- */
+
+/* Tablet (e.g., max 768px) */
+@media (max-width: 768px) {
+  .products-layout {
+    /* Tablet mein 2 column */
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .product-grid-header {
+    flex-wrap: wrap; /* Agar jagah kam ho toh wrap karein */
+    height: auto;
+    padding: 1rem;
+    gap: 1rem;
+  }
+}
+
+/* Mobile (e.g., max 480px) */
+@media (max-width: 480px) {
+  .products-layout {
+    /* Mobile mein 1 column */
+    grid-template-columns: 1fr;
+  }
+}
+/* --- Sort Dropdown Styles (Naya Code) --- */
+
+.sort-wrapper {
+  position: relative; /* Dropdown ko position dene ke liye */
+}
+
+.sort-btn svg {
+  transition: transform 0.2s ease-in-out;
+}
+
+.sort-btn .chevron-open {
+  transform: rotate(180deg);
+}
+
+.sort-dropdown {
+  position: absolute;
+  top: 100%; /* Button ke theek neeche */
+  right: 0; /* Right side se align */
+  background-color: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 0.5rem; /* 8px */
+  width: 250px; /* Dropdown ki width */
+  z-index: 10; /* Taaki yeh doosre content ke upar aaye */
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem; /* 4px */
+}
+
+.sort-option {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem; /* 8px */
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0.75rem 0.5rem; /* 12px 8px */
+  text-align: left;
+  border-radius: 4px;
+}
+
+.sort-option:hover {
+  background-color: #f4f4f5; /* Halka grey background */
+}
+
+.sort-option span {
+  font-family: 'Simplon_Norm-Regular', Helvetica;
+  font-weight: 400;
+  font-size: 1rem; /* 16px */
+  color: #252020;
+}
+
+/* Selected option ko bold karein (RECOMMENDED) */
+.sort-option:first-child span {
+  font-family: 'Simplon_Norm-Bold', Helvetica;
+  font-weight: 700;
+}
+
+/* Pehle se hi responsive hai, bas filter button ko adjust karna hai */
+.filter-icon {
+  display: none; /* Desktop par 'FILTER' icon hide karein */
+}
+
+/* --- Responsive (Mobile View) --- */
+@media (max-width: 768px) {
+  .product-grid-header {
+    /* '3425 ITEMS' ko hide karein */
+    .product-count {
+      display: none;
+    }
+
+    /* 'HIDE FILTER' button ko alag style karein */
+    .filter-toggle-btn {
+      /* Desktop wala icon hide karein */
+      .lucide-chevron-left {
+        display: none;
+      }
+      /* Mobile wala icon show karein */
+      .filter-icon {
+        display: block;
+      }
+    }
+    
+    .sort-btn span {
+      font-size: 1rem; /* 16px */
+    }
+  }
+}

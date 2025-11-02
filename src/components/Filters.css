@@ -1,0 +1,123 @@
+.filters-aside {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem; /* 24px */
+}
+
+/* Custom Checkbox Section */
+.checkbox-container {
+  display: flex;
+  align-items: flex-start; /* 'mt-1' ki jagah */
+  gap: 0.5rem; /* 8px */
+}
+
+/* Plain HTML/CSS se checkbox ko style karna thoda tricky hai, 
+   hum default checkbox use kar rahe hain */
+.checkbox-container input[type="checkbox"] {
+  width: 1rem; /* h-4 w-4 */
+  height: 1rem;
+  margin-top: 0.25rem; /* 'mt-1' ka effect */
+  cursor: pointer;
+}
+
+.checkbox-container label {
+  font-family: 'Simplon_Norm-Bold', Helvetica;
+  font-weight: 700;
+  color: var(--texttext); /* #252020 */
+  font-size: 1.125rem; /* 18px */
+  cursor: pointer;
+}
+
+/* Divider Line */
+.separator {
+  width: 100%;
+  height: 1px;
+  background-color: #e5e7eb; /* bg-gray-200 */
+}
+
+/* Filter Sections (Ideal for, Occasion, etc.) */
+.filter-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem; /* 8px */
+}
+
+.filter-section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.filter-section-header span {
+  font-family: 'Simplon_Norm-Bold', Helvetica;
+  font-weight: 700;
+  color: var(--texttext);
+  font-size: 1.125rem; /* 18px */
+}
+
+/* Icon ka color */
+.filter-section-header svg {
+  color: black;
+  transition: transform 0.2s;
+}
+
+.filter-section-header:hover svg {
+  transform: translateY(2px); /* group-hover:translate-y-0.5 */
+}
+
+.filter-section-value {
+  font-family: 'Simplon_Norm-Regular', Helvetica;
+  font-weight: 400;
+  color: var(--texttext);
+  font-size: 1.125rem; /* 18px */
+  padding-left: 0.25rem; /* Thoda gap */
+}
+/* --- Accordion Styles (Naya Code) --- */
+
+.filter-section-header svg {
+  transition: transform 0.2s ease-in-out;
+}
+
+.filter-section-header .chevron-open {
+  transform: rotate(180deg);
+}
+
+.filter-options-list {
+  padding-top: 0.5rem; /* Thoda gap */
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem; /* 12px */
+}
+
+.filter-option-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem; /* 8px */
+}
+
+.filter-option-item input[type="checkbox"] {
+  width: 1rem;
+  height: 1rem;
+  cursor: pointer;
+}
+
+.filter-option-item label {
+  font-family: 'Simplon_Norm-Regular', Helvetica;
+  font-weight: 400;
+  font-size: 1rem; /* 16px */
+  color: #252020;
+  cursor: pointer;
+}
+
+.unselect-all {
+  font-family: 'Simplon_Norm-Regular', Helvetica;
+  font-size: 1rem;
+  color: #888792; /* textsecondary-text */
+  margin-bottom: 0.5rem;
+  cursor: pointer;
+}

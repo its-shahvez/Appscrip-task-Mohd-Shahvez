@@ -1,38 +1,78 @@
-.App {
-  text-align: center;
+
+/* Basic Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Yeh fonts aapke Tailwind config mein aayi thi. 
+  Aapko yeh font files download karke project mein lagani hongi, 
+  ya aap Google Fonts (jaise 'Inter' ya 'Roboto') bhi use kar sakte hain.
+  Abhi ke liye, hum 'sans-serif' use kar rahe hain.
+*/
+body {
+  font-family: "Simplon_Norm-Regular", "Inter", sans-serif;
+  background-color: #ffffff;
+  color: #252020; /* misctext */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+/* Yeh App.js mein main layout ko handle karega */
+.app-container {
+  width: 100%;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+/* Yeh products page ka main layout banayega (Filters + Products) */
+.main-content {
+  display: flex;
+  width: 100%;
+  padding: 0 2rem; /* Thoda side se padding */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.sidebar-container {
+  width: 300px; /* Filter section ki width */
+  flex-shrink: 0;
+  padding: 1.5rem;
+}
+
+.product-grid-container {
+  flex-grow: 1; /* Bachi hui poori jagah le lega */
+  padding: 1.5rem;
+}
+/* --- Tablet View --- */
+@media (max-width: 1024px) {
+  .main-content {
+    padding: 0 1rem; /* Padding kam karein */
   }
-  to {
-    transform: rotate(360deg);
+  .sidebar-container {
+    width: 250px; /* Filters ko thoda patla karein */
+  }
+}
+
+/* --- Mobile View --- */
+@media (max-width: 768px) {
+  .main-content {
+    /* Main layout ko vertical stack karein */
+    flex-direction: column;
+    padding: 0;
+  }
+
+  .sidebar-container {
+    width: 100%; /* Filters poori width lein */
+    padding: 1rem;
+    border-bottom: 1px solid #e5e7eb;
+  }
+
+  /* Yeh class filters ko hide karegi */
+  .sidebar-container.filters-hidden {
+    display: none;
+  }
+  
+  .product-grid-container {
+    width: 100%;
+    padding: 1rem;
   }
 }

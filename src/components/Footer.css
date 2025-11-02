@@ -1,0 +1,143 @@
+.footer {
+  position: relative;
+  width: 100%;
+  background-color: #000000;
+  color: #ffffff; /* Default text color */
+  padding: 5rem 4rem; /* py-20 px-32 (thoda kam padding) */
+  font-family: 'Simplon_Norm-Regular', Helvetica;
+}
+
+.footer-grid {
+  display: grid;
+  /* Desktop mein 3 column */
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4rem; /* 64px */
+}
+
+.footer-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem; /* 24px */
+}
+
+.footer-section h2 {
+  font-family: 'Simplon_Norm-Bold', Helvetica;
+  font-weight: 700;
+  font-size: 1.25rem; /* 20px */
+  white-space: nowrap;
+}
+
+.footer-section p {
+  font-size: 1rem; /* 16px */
+  color: #f1f1f1; /* Thoda halka white */
+  line-height: 1.5;
+}
+
+/* Newsletter section */
+.newsletter-form {
+  display: flex;
+  gap: 0.5rem; /* 8px */
+}
+
+.newsletter-form input {
+  flex-grow: 1;
+  background-color: white;
+  padding: 0.75rem 1.5rem; /* px-6 py-3.5 */
+  font-family: 'Simplon_Norm-Regular', Helvetica;
+  font-size: 1.125rem; /* 18px */
+  color: #888792; /* texttertiary-text */
+  border: none;
+  border-radius: 5px;
+}
+
+.newsletter-form button {
+  width: 184px;
+  height: auto;
+  background-color: #000000;
+  border: 1px solid white;
+  color: white;
+  font-family: 'Simplon_Norm-Medium', Helvetica;
+  font-weight: 500;
+  font-size: 1.125rem; /* 18px */
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 0.75rem 1rem;
+}
+
+/* Links */
+.footer-links nav {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem; /* 16px */
+}
+
+.footer-links a {
+  font-family: 'Simplon_Norm-Regular', Helvetica;
+  font-size: 1.125rem; /* 18px */
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.footer-links a:hover {
+  color: #cccccc; /* hover:text-white/80 */
+}
+
+/* Contact / Currency */
+.currency-selector {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.currency-selector img {
+  width: 1.5rem; /* 24px */
+  height: 1.5rem;
+}
+
+.currency-selector span {
+  font-family: 'Simplon_Norm-Bold', Helvetica;
+  font-weight: 700;
+  font-size: 1rem; /* 16px */
+  letter-spacing: 1px;
+}
+
+.payment-methods img {
+  width: 100%;
+  max-width: 376px;
+  height: auto;
+}
+
+/* Copyright */
+.footer-copyright {
+  text-align: center;
+  margin-top: 3rem; /* my-12 */
+  padding-top: 3rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.2); /* bg-white/20 */
+  font-size: 0.875rem; /* 14px */
+}
+
+/* --- Responsive --- */
+@media (max-width: 1024px) {
+  .footer-grid {
+    /* Tablet mein 2 column */
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .footer {
+    padding: 3rem 1.5rem;
+  }
+  .footer-grid {
+    /* Mobile mein 1 column */
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  .newsletter-form {
+    flex-direction: column;
+  }
+  .newsletter-form button {
+    width: 100%;
+  }
+}

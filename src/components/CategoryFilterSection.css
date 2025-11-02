@@ -1,0 +1,48 @@
+.category-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem; /* 16px */
+  padding: 2rem 1rem; /* py-8 px-4 */
+  text-align: center;
+}
+
+.category-title {
+  font-family: 'Simplon_Norm-Regular', Helvetica;
+  font-weight: 400;
+  color: #252020; /* misctext */
+  font-size: 2.5rem; /* 4xl se thoda chhota, zyada readable */
+  letter-spacing: 1px;
+  
+  /* Fade-in Animation */
+  opacity: 0;
+  transform: translateY(-1rem);
+  animation: fade-in 1s ease 0.2s forwards;
+}
+
+.category-description {
+  max-width: 720px;
+  font-family: 'Simplon_Norm-Regular', Helvetica;
+  font-weight: 400;
+  color: #252020;
+  font-size: 1.125rem; /* 18px */
+  line-height: 2.5rem; /* leading-10 */
+  
+  /* Fade-in Animation */
+  opacity: 0;
+  transform: translateY(-1rem);
+  animation: fade-in 1s ease 0.4s forwards;
+}
+
+/* Yeh animation aapke CSS se liya hai */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(-1rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

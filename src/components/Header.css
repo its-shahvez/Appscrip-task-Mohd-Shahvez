@@ -1,0 +1,246 @@
+/* Top Banner (Black strip) */
+.top-banner {
+  display: flex;
+  width: 100%;
+  height: 2rem; /* 32px */
+  align-items: center;
+  justify-content: center; /* Center mein rakhte hain */
+  gap: 2.5rem; /* icons ke beech ka gap */
+  background-color: #000000;
+  padding: 0.5rem;
+  color: white;
+}
+
+.banner-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.625rem; /* 10px */
+}
+
+.banner-item img {
+  width: 1rem; /* 16px */
+  height: 1rem;
+}
+
+.banner-item span {
+  font-family: 'Simplon_Norm-Regular', Helvetica;
+  font-size: 0.75rem; /* 12px */
+  letter-spacing: 1px;
+}
+
+/* Main Header (Logo, Nav, Icons) */
+.main-header {
+  position: relative;
+  width: 100%;
+  height: 120px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #e5e7eb; /* neutral-200 */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 3rem;
+}
+
+.header-logo {
+  font-family: 'Inter', Helvetica;
+  font-weight: 800;
+  font-size: 2.25rem; /* 36px */
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+
+/* Main Navigation */
+.main-nav ul {
+  display: flex;
+  align-items: center;
+  gap: 4rem; /* 64px */
+  list-style: none;
+}
+
+.main-nav li {
+  cursor: pointer;
+  font-family: 'Simplon_Norm-Bold', Helvetica;
+  font-weight: 700;
+  font-size: 1.25rem; /* 20px */
+  letter-spacing: 1px;
+}
+
+.main-nav li:hover {
+  color: #EB4C6B; /* primaryprimary */
+}
+
+/* Header Icons (Right side) */
+.header-icons {
+  display: inline-flex;
+  align-items: center;
+  gap: 1.5rem; /* 24px */
+}
+
+.header-icons .icon-button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  color: #252020; /* Icon ka default color set karein */
+}
+
+/* img ke bajaaye ab svg ko target karein */
+.header-icons .icon-button svg {
+  width: 1.5rem; /* 24px */
+  height: 1.5rem;
+}
+
+.header-icons .lang-selector {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-family: 'Simplon_Norm-Bold', Helvetica;
+  font-weight: 700;
+  font-size: 1rem; /* 16px */
+  color: #252020;
+}
+
+/* img ke bajaaye ab svg ko target karein */
+.lang-selector svg {
+  width: 1rem;
+  height: 1rem;
+}
+/* --- Header Responsive (Naya Code) --- */
+
+/* Shuruaat mein, mobile elements ko hide rakhein */
+.mobile-menu-icon {
+  display: none;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 1001; /* Taaki yeh sabse upar rahe */
+  color: #252020;
+}
+
+.mobile-cart-icon {
+  display: none; /* Desktop par hide */
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #252020;
+}
+
+.mobile-nav-menu {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  position: absolute; /* Header ke neeche float karega */
+  top: 152px; /* Top banner (32px) + Main header (120px) */
+  left: 0;
+  width: 100%;
+  padding: 1rem 2rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  
+  /* Hide/Show ke liye transition */
+  transform: translateY(-150%);
+  opacity: 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  visibility: hidden;
+}
+
+.mobile-nav-menu.open {
+  transform: translateY(0);
+  opacity: 1;
+  visibility: visible;
+}
+
+.mobile-nav-menu ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem; /* 24px */
+}
+
+.mobile-nav-menu li {
+  font-family: 'Simplon_Norm-Bold', Helvetica;
+  font-weight: 700;
+  font-size: 1.25rem; /* 20px */
+  cursor: pointer;
+}
+
+.mobile-nav-icons {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #e5e7eb;
+}
+.mobile-nav-icons .icon-button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1rem;
+}
+
+
+/* --- Tablet View (1024px) --- */
+@media (max-width: 1024px) {
+  .main-header {
+    padding: 1rem 1.5rem;
+  }
+  .main-nav ul {
+    gap: 2rem; /* Nav links ko thoda kareeb laayein */
+  }
+  .header-icons {
+    gap: 1rem; /* Icons ko thoda kareeb laayein */
+  }
+  .header-logo {
+    font-size: 2rem; /* Logo thoda chhota */
+  }
+  .main-nav li {
+    font-size: 1rem; /* Nav links thode chhote */
+  }
+  .top-banner {
+    display: none; /* Tablet par top banner hide kar dein */
+  }
+  .mobile-nav-menu {
+    top: 120px; /* Kyunki top banner hide ho gaya */
+  }
+}
+
+
+/* --- Mobile View (768px) --- */
+@media (max-width: 768px) {
+  .top-banner {
+    display: none; /* Mobile par bhi hide rakhein */
+  }
+
+  .main-header {
+    height: 80px; /* Mobile header chhota karein */
+  }
+  
+  /* Desktop ki cheezein hide karein */
+  .main-nav,
+  .header-icons {
+    display: none;
+  }
+
+  /* Mobile ki cheezein show karein */
+  .mobile-menu-icon {
+    display: block;
+  }
+  .mobile-cart-icon {
+    display: block;
+  }
+
+  .header-logo {
+    /* Logo ko beech mein laane ke liye */
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .mobile-nav-menu {
+    top: 80px; /* Mobile header height se match karein */
+  }
+}
